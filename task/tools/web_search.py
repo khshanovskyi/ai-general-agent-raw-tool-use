@@ -53,9 +53,8 @@ class WebSearchTool(BaseTool):
         # 1. Create `headers` dict: "Authorization": self.__api_key, "Content-Type": "application/json"
         # 2. Create `request_data` dict with:
         #    - "model": "gpt-4o-search-preview"
+        #    - "web_search_options": {}
         #    - "messages": [{"role": "user", "content": str(arguments["request"])}]
-        #    - "tools": [{"type": "static_function", "static_function": {"name": "google_search", "description": "Grounding with Google Search","configuration": {}}}]
-        #    - "temperature": 0
-        # 3. Make POST call with `requests` lib: `url=self.__endpoint, headers=headers, json=request_dat`
+        # 3. Make POST call with `requests` lib: `url=self.__endpoint, headers=headers, json=request_data`
         # 4. Check if response status is 200 and if yes then return message content, otherwise return `f"Error: {response.status_code} {response.text}"`
         raise NotImplementedError()
